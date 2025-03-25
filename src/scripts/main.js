@@ -36,7 +36,9 @@ const secondPromise = new Promise((resolve, reject) => {
   });
 });
 
-secondPromise.then((message) => showMessage(message, 'success'));
+secondPromise
+  .then((message) => showMessage(message, 'success'))
+  .catch((message) => showMessage(message, 'error'));
 
 const thirdPromise = new Promise((resolve, reject) => {
   let leftButtonUp = false;
@@ -56,4 +58,6 @@ const thirdPromise = new Promise((resolve, reject) => {
   });
 });
 
-thirdPromise.then((message) => showMessage(message, 'success'));
+thirdPromise
+  .then((message) => showMessage(message, 'success'))
+  .catch((message) => showMessage(message, 'error'));
